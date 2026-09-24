@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 顶部导航：三个 tab -->
+    <TextView
+        android:id="@+id/tabStation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:text="Space Stations"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tabFlights"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Flights"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/tabStation"
+        app:layout_constraintStart_toEndOf="@id/tabStation" />
+
+    <TextView
+        android:id="@+id/tabRovers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Rovers"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/tabStation"
+        app:layout_constraintStart_toEndOf="@id/tabFlights" />
+
+    <!-- 中部：DCA ↔ MARS 选择模块 -->
+    <TextView
+        android:id="@+id/dca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="32dp"
+        android:text="DCA"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tabStation" />
+
+    <ImageView
+        android:id="@+id/arrows"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:contentDescription="双向箭头"
+        android:src="@drawable/double_arrows"
+        app:layout_constraintBottom_toBottomOf="@id/dca"
+        app:layout_constraintEnd_toStartOf="@id/mars"
+        app:layout_constraintStart_toEndOf="@id/dca"
+        app:layout_constraintTop_toTopOf="@id/dca" />
+
+    <TextView
+        android:id="@+id/mars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:text="MARS"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/dca" />
+
+    <!-- One Way 开关行 -->
+    <TextView
+        android:id="@+id/oneWay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="24dp"
+        android:text="One Way"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dca" />
+
+    <Switch
+        android:id="@+id/oneWaySwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/oneWay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/oneWay" />
+
+    <!-- 1 Traveller -->
+    <TextView
+        android:id="@+id/traveller"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        android:text="1 Traveller"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/oneWay" />
+
+    <!-- 右侧装饰：火箭 + 星系 -->
+    <ImageView
+        android:id="@+id/rocket"
+        android:layout_width="40dp"
+        android:layout_height="72dp"
+        android:contentDescription="火箭"
+        android:src="@drawable/rocket_icon"
+        app:layout_constraintBottom_toTopOf="@id/depart"
+        app:layout_constraintEnd_toStartOf="@id/galaxy"
+        app:layout_constraintTop_toBottomOf="@id/traveller" />
+
+    <ImageView
+        android:id="@+id/galaxy"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:contentDescription="星系"
+        android:src="@drawable/galaxy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/rocket" />
+
+    <!-- 底部 DEPART 按钮 -->
+    <Button
+        android:id="@+id/depart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#2E7D32"
+        android:paddingStart="48dp"
+        android:paddingEnd="48dp"
+        android:text="DEPART"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
