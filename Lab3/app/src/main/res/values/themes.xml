@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 基于 Light.DarkActionBar，退出 Android 15+ 默认的沉浸式，避免内容被状态栏遮挡 -->
+    <style name="Theme.App" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
+    </style>
+
+</resources>
